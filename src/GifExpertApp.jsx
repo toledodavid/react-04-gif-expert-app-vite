@@ -4,13 +4,20 @@ export const GifExpertApp = () => {
 
   const [categories, setCategories] = useState(['Vikings', 'Dragon ball']);
 
-  console.log(categories);
+  const onAddCategory = () => {
+    setCategories(['Valorant', ...categories]);
+
+    // SAME BUT USING THE CALLBACK FROM THE setCategories
+    // setCategories(categories => [...categories, 'Valorant']);
+  };
 
   return(
     <>
       <h1>GifExpertApp</h1>
 
       {/* Input */}
+
+      <button onClick={onAddCategory}>Add</button>
 
       <ol>
         {
