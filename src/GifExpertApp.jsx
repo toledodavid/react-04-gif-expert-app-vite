@@ -6,6 +6,8 @@ export const GifExpertApp = () => {
   const [categories, setCategories] = useState(['Vikings', 'Dragon ball']);
 
   const onAddCategory = (newCategory) => {
+    if (categories.includes(newCategory)) return;
+
     setCategories([newCategory, ...categories]);
 
     // SAME BUT USING THE CALLBACK FROM THE setCategories
@@ -21,8 +23,8 @@ export const GifExpertApp = () => {
 
       <ol>
         {
-          categories.map((category, index) => (
-            <li key={index}>{category}</li>
+          categories.map((category) => (
+            <li key={category}>{category}</li>
           ))
         }
       </ol>
